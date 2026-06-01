@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import users from "../Api/usersResponse.json";
+import users from "../api/usersResponse.json";
 
 const path = 'pre';
 
