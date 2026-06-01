@@ -4,8 +4,8 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   
-  timeout: 60000,
-  expect: { timeout: 15000 },
+  timeout: 20000,
+  expect: { timeout: 10000 },
   
   testDir: "./tests",
   fullyParallel: true,
@@ -14,7 +14,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 1,
  
   use: {
-    headless: true,
+    headless: process.env.CI ? true : false,
     screenshot: "only-on-failure",    
     video: {
       mode: 'on',
