@@ -27,10 +27,10 @@ test("Find Products Name and Price", async ({ page }) => {
 
 test('Rozetka', async ({page}) => { 
 
-  await page.goto("https://rozetka.com.ua")
-  await page.locator("//*[text()=' Товари для геймерів ']").click()
-  await page.locator("//*[text()=' Ігрові приставки PlayStation ']").click()
-  await page.locator("//*[text()=' Sony Playstation 5 Pro ']").click()
+//   await page.goto("https://rozetka.com.ua")
+//   await page.locator("//*[text()=' Товари для геймерів ']").click()
+//   await page.locator("//*[text()=' Ігрові приставки PlayStation ']").click()
+//   await page.locator("//*[text()=' Sony Playstation 5 Pro ']").click()
   
   const minField = page.getByTestId("filter_slider_min_input");
   const maxField = page.getByTestId("filter_slider_max_input");
