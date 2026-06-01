@@ -14,7 +14,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 1,
  
   use: {
-    headless: false,
+    headless: true,
     screenshot: "only-on-failure",    
     video: {
       mode: 'on',
