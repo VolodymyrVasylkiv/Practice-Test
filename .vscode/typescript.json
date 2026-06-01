@@ -1,0 +1,15 @@
+{
+
+
+	"Print to console": {
+		"prefix": "c",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+	
+
+
+}

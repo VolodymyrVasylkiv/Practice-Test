@@ -1,0 +1,111 @@
+{
+    "workbench.startupEditor": "none",
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": false,
+    "playwright.showTrace": false,
+    "testing.automaticallyOpenTestResults": "openOnTestStart",
+    "testing.showCoverageInExplorer": false,
+    "playwright.reuseBrowser": false,
+    "playwright.pickLocatorCopyToClipboard": true,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "extensions.ignoreRecommendations": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Night Owl",
+    "explorer.confirmDragAndDrop": false,
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    
+    
+    "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+
+    "editor.quickSuggestions": {
+         "other": true, 
+         "comments": true, 
+         "strings": true
+         },
+
+    "editor.inlineSuggest.enabled": true,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.parameterHints.enabled": true,
+    "editor.wordBasedSuggestions": "off",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.tabCompletion": "on",
+
+    "editor.autoIndent": "full",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.autoClosingQuotes": "languageDefined",
+    "editor.autoSurround": "languageDefined",
+    "editor.autoClosingDelete": "auto",
+    "editor.bracketPairColorization.enabled": true
+    },
+
+  "chat.viewSessions.orientation": "stacked",
+    
+
+  "editor.semanticHighlighting.enabled": true,
+
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      // ===== TYPES =====
+      "type": "#4EC9B0",
+      "class": "#4EC9B0",
+      "interface": "#4EC9B0",
+      "enum": "#4EC9B0",
+      "typeParameter": "#4EC9B0",
+      "typeAlias": "#4EC9B0",
+      
+
+      // ===== VARIABLES =====
+      "variable": "#449df1",
+      "parameter": "#9ec8ff",
+      "property": "#9ec8ff",
+
+      // ===== FUNCTIONS =====
+      "function": "#f3f3acf2",
+      "method": "#f3f3ace2",
+
+      // ===== KEYWORDS =====
+      "keyword": "#4fa9f3",
+      "modifier": "#569CD6",
+
+      // const
+      "keyword.const": "#569CD6",
+
+      // ===== OTHER =====
+      
+      "number": "#B5CEA8",
+      "comment": "#6A9955",
+      "operator": "#D4D4D4",
+      "namespace": "#4EC9B0"
+    }
+  },
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Primitive types (string, number, boolean)",
+        "scope": [
+          "support.type.primitive",
+          "keyword.type",
+        ],
+        "settings": {
+          "foreground": "#4EC9B0"
+        }
+      },
+      {
+        "name": "String literals",
+        "scope": [
+          "string.quoted.double",
+          "string.quoted.single",
+        ],
+        "settings": {
+          "foreground": "#cda06f"
+        }
+      }         
+    ]
+  }
+}
