@@ -37,8 +37,8 @@ jobs:
       run: npx playwright install
 
     # 🧪 Run ONLY smoke tests (ключ до 60–90 sec)
-    - name: Run smoke tests
-      run: npx playwright test --grep @smoke --workers=2
+    - name: Run tests
+      run: npx playwright test
 
     # 📊 Report
     - uses: actions/upload-artifact@v4
