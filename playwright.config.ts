@@ -25,6 +25,7 @@ export default defineConfig({
   reporter: [
     ["list"],            
     ["html", { open: "on-failure" }],
+    ["github"]
   ],
   projects: [
     {
