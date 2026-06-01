@@ -34,7 +34,7 @@ jobs:
     # 🌐 Install browsers ONLY if cache miss
     - name: Install Playwright browsers
       if: steps.pw-cache.outputs.cache-hit != 'true'
-      run: npx playwright install --with-depsfinal v5
+      run: npx playwright install
 
     # 🧪 Run ONLY smoke tests (ключ до 60–90 sec)
     - name: Run smoke tests
