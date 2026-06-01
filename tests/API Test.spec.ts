@@ -13,7 +13,7 @@ test("Sample API Test GET", async ({ request }) => {
 
   
   expect(response.status()).toBe(200);
-  console.log(`User first name is ${users.data[2].first_name} and email is ${users.data[2].email}\n`);
+  console.log(`User first name is ${users.data[4].first_name} and email is ${users.data[2].email}\n`);
   
  });
 
