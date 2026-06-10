@@ -9,11 +9,11 @@ test("Find Products Name and Price", async ({ page }) => {
     const productItems = await page.locator("//*[@class='features_items']//*[@class='col-sm-4']").all();
 
     for (const item of productItems) {
-      const name = await item.locator(".productinfo.text-center p").innerText();
+      const productName = await item.locator(".productinfo.text-center p").innerText();
       const priceText = await item.locator(".productinfo.text-center h2").innerText();
-      const price = parseFloat(priceText.replace("Rs.", "").trim());
-      products.push({name, price});
-      console.log(`Product name is: ${name}, price is: ${price}`);     
+      const productprice = parseFloat(priceText.replace("Rs.", "").trim());
+      products.push({name: productName, price: productprice});
+      console.log(`Product name is: ${productName}, price is: ${productprice}`);     
     }
     return products;  
   }

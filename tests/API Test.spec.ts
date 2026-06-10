@@ -7,13 +7,16 @@ test("Sample API Test GET", async ({ request }) => {
   const response = await request.get("https://reqres.in/api/users/", {
     headers: { "x-api-key": "reqres_496f5fb9046444ef80c04366564108a6" },
   });
+  
 
-  const responseBody = await response.json();
-  console.log(responseBody);
+  const responseBody: typeof users = await response.json();
+  const filteredResults = responseBody.data.filter(u => u.last_name === 'Holt')
+  
+  console.log(filteredResults);
 
   
   expect(response.status()).toBe(200);
-  console.log(`User first name is ${users.data[4].first_name} and email is ${users.data[2].email}\n`);
+  console.log(`User first name is ${users.data[2].first_name} and email is ${users.data[2].email}\n`);
   
  });
 
