@@ -1,4 +1,4 @@
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 
 test("Bondar API", async ({page, request}) => {
@@ -55,21 +55,35 @@ test("Some test", async ({ page }) => {
 
 })
 
-test("Practice", async ({ }) => { 
+test("Practice", async ({ page}) => { 
 
     type obj3 = {ages: number}
-    const obj1: obj3 = {ages:10}
+    const obj1: obj3 = { ages: 10 }
+    console.log(obj1);
 
-    type User = { fname: string, fage: number } 
+    type User1 = { name2: string, age2: number } 
 
-    const user1: User = { fname: 'VV', fage: 1 }
-    console.log(`The first name is ${user1.fname} and age is ${user1.fage}`);
+    const user1: User1 = { name2: 'VV', age2: 1 }
+    console.log(`The first name is ${user1.name2} and age is ${user1.age2}`);
 
     const name1 = (name: string, age: number) => { 
         console.log(`My name is ${name} and my age is ${age}`)
     }
     name1('dd', 56)
+
+    const generic = <T>(arg1: T, arg2: T) => {
+        console.log(arg1, arg2);
+     }
+    generic<string>('Vol', 'Vas');
+    generic<number>(1, 2);
+    generic<boolean>(true, false)
     
+    await page.goto('https://www.youtube.com/')
+    const tooltipLocator = page.locator('#center').locator('[style-target=tooltip]')
+    const tooltipCount = await tooltipLocator.count()
+    const tool = await tooltipLocator.innerText()
+    console.log(tooltipCount);
+    console.log(tool);
 })
 
 

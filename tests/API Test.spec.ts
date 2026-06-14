@@ -10,11 +10,16 @@ test("Sample API Test GET", async ({ request }) => {
   
 
   const responseBody: typeof users = await response.json();
-  const filteredResults = responseBody.data.filter(u => u.last_name === 'Holt')
+  const onlyMailValue = responseBody.data[2].email
+  console.log(onlyMailValue);
   
-  console.log(filteredResults);
+  const filteredResults = responseBody.data.filter(value => value.email === 'emma.wong@reqres.in')
+  console.log('Filtered Results are' , filteredResults);
+  
+  const res = filteredResults[0].email
+  console.log(`The result is ${res}`);
 
-  
+  expect(onlyMailValue).toBe(res)
   expect(response.status()).toBe(200);
   console.log(`User first name is ${users.data[2].first_name} and email is ${users.data[2].email}\n`);
   

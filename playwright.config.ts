@@ -11,13 +11,13 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 0 : 0,
-  workers: process.env.CI ? 5 : 1,
+  workers: process.env.CI ? 1 : 1,
  
   use: {
     headless: process.env.CI ? true : false,
     screenshot: "only-on-failure",    
     video: {
-      mode: 'on',
+      mode: 'retain-on-failure',
     },
     trace: "retain-on-failure",
   },
