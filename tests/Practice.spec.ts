@@ -42,7 +42,6 @@ test("Bondar API", async ({page, request}) => {
 
 test("Some test", async ({ page }) => {
     await page.goto("https://click.ua/")
-    await page.getByRole('link', { name: 'Гральна зона' }).click({ force: true });
 
     const products: { name: string }[] = []
     const menu = await page.locator('.main-slider-left .main-navigation .catalog-menu-open').all()
