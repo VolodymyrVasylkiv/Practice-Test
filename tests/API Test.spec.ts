@@ -1,5 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { expect } from "@playwright/test";
 import users from "../api/usersResponse.json";
+import { test } from "../project/fixtures/customFixture";
 
 const path = 'pre';
 
@@ -72,24 +73,13 @@ test("Mock route API Test 2", async ({ page }) => {
 
 });
 
-test("Get Token Bondar API", async ({request}) => {
-  const response = await request.post("https://conduit-api.bondaracademy.com/api/users/login", {
+test("Get Token Bondar API", async ({ tokenFIXT, request }) => {
+  
+  const token = tokenFIXT
+
+  const response = await request.post("https://conduit-api.bondaracademy.com/api/articles", {
+    headers: {"Authorization": token },
     data: {
-      user:
-      {
-        email: "pwapiuser@test.com",
-        password: "Welcome"
-      }
-    }  
-})
-const responseToken = await response.json();
-const token = responseToken.user.token;
-console.log(`The token is:\n ${token}\n`);
-
-
-const response2 = await request.post("https://conduit-api.bondaracademy.com/api/articles", {
-  headers: {"Authorization": `Token ${token}`},
-  data: {
     "article": {
       "title": "VolVas",
       "description": "AQA Engineer",
@@ -98,19 +88,19 @@ const response2 = await request.post("https://conduit-api.bondaracademy.com/api/
     }
   }
 })
-const responsePost = await response2.json();
+const responsePost = await response.json();
   console.log("Article is created:\n");
   console.log(responsePost);
   
   
-const response3 = await request.get("https://conduit-api.bondaracademy.com/api/articles/VolVas-15658", {})
+const response3 = await request.get("https://conduit-api.bondaracademy.com/api/articles/VolVas-15658")
 const responseGet = await response3.json();
   console.log("Article is found:\n");
   console.log(responseGet);
 
 
 const response4 = await request.put("https://conduit-api.bondaracademy.com/api/articles/VolVas-15658", {
-  headers: {"Authorization": `Token ${token}`},
+  headers: {"Authorization": token},
   data: {
     "article": {
       "title": "1",
@@ -125,10 +115,9 @@ console.log(responsePut);
 
 
 const response5 = await request.delete("https://conduit-api.bondaracademy.com/api/articles/1-15658", {
-  headers: {"Authorization": `Token ${token}`},
+  headers: {"Authorization": token},
 })
   console.log("Article is deleted:\n");
   console.log(`Status: ${response5.statusText()}\n`);
   
-
 })

@@ -1,4 +1,5 @@
-import { expect, test } from "@playwright/test";
+import { test } from "@playwright/test";
+
 
 
 test("Bondar API", async ({page, request}) => {
@@ -54,7 +55,7 @@ test("Some test", async ({ page }) => {
 
 })
 
-test("Practice", async ({ page}) => { 
+test("Practice", async ({ }) => { 
 
     type obj3 = {ages: number}
     const obj1: obj3 = { ages: 10 }
@@ -77,12 +78,7 @@ test("Practice", async ({ page}) => {
     generic<number>(1, 2);
     generic<boolean>(true, false)
     
-    await page.goto('https://www.youtube.com/')
-    const tooltipLocator = page.locator('#center').locator('[style-target=tooltip]')
-    const tooltipCount = await tooltipLocator.count()
-    const tool = await tooltipLocator.innerText()
-    console.log(tooltipCount);
-    console.log(tool);
+    
 })
 
 

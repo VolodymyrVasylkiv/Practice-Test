@@ -1,22 +1,22 @@
 import { test } from "../project/fixtures/fixturePages";
 
-test('Login Page Test', async ({ pomPages: page }) => {
+test('Login Page Test', async ({ pomPages }) => {
 
-    await page.basePage.goToPage();
+    await pomPages.basePage.goToPage();
 
-    await page.signUpLoginPage.clickOnSignupLoginButton();
-    await page.signUpLoginPage.fillSignUpForm();
-    await page.signUpLoginPage.clickOnSignUpButton();
+    await pomPages.signUpLoginPage.clickOnSignupLoginButton();
+    await pomPages.signUpLoginPage.fillSignUpForm();
+    await pomPages.signUpLoginPage.clickOnSignUpButton();
 
-    await page.accountInfoPage.fillAccountInformationForm();
-    await page.accountInfoPage.clickCreateAccountButton();
+    await pomPages.accountInfoPage.fillAccountInformationForm();
+    await pomPages.accountInfoPage.clickCreateAccountButton();
 
-    await page.createAndDeletePage.checkCreatedAccount();
-    await page.createAndDeletePage.clickOnContinueBtn();
-    await page.createAndDeletePage.checkDeleteAccount();
-    await page.createAndDeletePage.clickOnDeleteAccountBtn();
-    await page.createAndDeletePage.checkAccountDeleted();
-    await page.createAndDeletePage.checkSignupLoginHeader();
+    await pomPages.createAndDeletePage.checkCreatedAccount();
+    await pomPages.createAndDeletePage.clickOnContinueBtn();
+    await pomPages.createAndDeletePage.checkDeleteAccount();
+    await pomPages.createAndDeletePage.clickOnDeleteAccountBtn();
+    await pomPages.createAndDeletePage.checkAccountDeleted();
+    await pomPages.createAndDeletePage.checkSignupLoginHeader();
 
 
 
