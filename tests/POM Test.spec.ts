@@ -1,4 +1,4 @@
-import { test } from "../project/fixtures/fixturePages";
+import { test } from "../project/fixtures/pomFixtures";
 
 test('Login Page Test', async ({ pomPages }) => {
 

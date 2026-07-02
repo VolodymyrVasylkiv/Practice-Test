@@ -90,7 +90,7 @@
         "name": "Primitive types (string, number, boolean)",
         "scope": [
           "support.type.primitive",
-          "keyword.type",
+          "keyword.type"
         ],
         "settings": {
           "foreground": "#4EC9B0"
@@ -100,7 +100,7 @@
         "name": "String literals",
         "scope": [
           "string.quoted.double",
-          "string.quoted.single",
+          "string.quoted.single"
         ],
         "settings": {
           "foreground": "#cda06f"
