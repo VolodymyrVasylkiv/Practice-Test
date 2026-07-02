@@ -4,7 +4,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   
-  timeout: 15000,
+  timeout: 10000,
   expect: { timeout: 5000 },
   
   testDir: "./tests",
@@ -33,10 +33,6 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         channel: 'chrome',
-        // {
-        //   name: 'firefox',
-        //   use: { ...devices['Desktop Firefox'] },
-        // },
         viewport: null,
         deviceScaleFactor: undefined,
 

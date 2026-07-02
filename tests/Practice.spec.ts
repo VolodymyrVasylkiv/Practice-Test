@@ -1,45 +1,31 @@
-import { test } from "@playwright/test";
+import { test, expect } from "@playwright/test";
+
+test("Find Products Name and Price", async ({ page }) => {
+  await page.goto("https://automationexercise.com/category_products/6");
+
+  async function getProductsNameAndPrice() {
+   
+    const products: {name: string, price: number}[] = []; 
+    const productItems = await page.locator("//*[@class='features_items']//*[@class='col-sm-4']").all();
+
+    for (const item of productItems) {
+      const productName = await item.locator(".productinfo.text-center p").innerText();
+      const priceText = await item.locator(".productinfo.text-center h2").innerText();
+      const productprice = parseFloat(priceText.replace("Rs.", "").trim());
+      products.push({name: productName, price: productprice});
+      console.log(`Product name is: ${productName}, price is: ${productprice}`);     
+    }
+    return products;  
+  }
+  
+  const prod = await getProductsNameAndPrice();
+  expect(prod.filter(product => product.name.includes("Grunt")));
+  expect(prod[1].price).toBe(1200);
+  console.log(prod);
+
+});
 
 
-
-test("Bondar API", async ({page, request}) => {
-  const loginResponse = await request.post("https://conduit-api.bondaracademy.com/api/users/login", {
-      data: { 
-          user:{
-            email: "pwapiuser@test.com",
-            password: "Welcome"
-        }     
-    } 
-})
-    const tokenResponse = await loginResponse.json();
-    const token = tokenResponse.user.token;
-    console.log(`The token is:\n ${token}\n`);
-
-    await page.route('https://conduit-api.bondaracademy.com/api/tags', async (route) => {
-        const data ={
-          "tags": [
-            "Metallica",
-            "Master Of Puppets",
-            "Nothing Else",
-            "YouTube",
-            "МИШААААААААААА"]
-        }
-        await route.fulfill({
-         status: 200,
-         json: data,})
-    })
-
-    //await page.goto("https://conduit.bondaracademy.com/")
-    //await page.waitForTimeout(3000)
-    const tags = await request.get('https://conduit-api.bondaracademy.com/api/tags')
-    const getTags = await tags.json()
-    console.log(getTags);
-    
-    console.log(getTags.tags[6]);
-    
-
-
-})
 
 test("Some test", async ({ page }) => {
     await page.goto("https://click.ua/")
