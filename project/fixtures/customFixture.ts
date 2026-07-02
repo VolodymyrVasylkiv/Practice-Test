@@ -12,10 +12,10 @@ export const test = base.extend<TestOptions>({
             data: { user: { email: "pwapiuser@test.com", password: "Welcome" } }
         })
         const responseBody = await response.json();
-        const token = 'Token ' + responseBody.user.token;
+        const token = 'Token ' + responseBody.user.token
         await use(token)
 
-          console.log(`The token is:\n ${token}\n`);
+        console.log(`The token is:\n ${token}\n`);
     }
 
 })

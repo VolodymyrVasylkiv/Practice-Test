@@ -76,9 +76,10 @@ test("Mock route API Test 2", async ({ page }) => {
 test("Get Token Bondar API", async ({ tokenFIXT, request }) => {
   
   const token = tokenFIXT
+  const authToken = { "Authorization": token }
 
   const response = await request.post("https://conduit-api.bondaracademy.com/api/articles", {
-    headers: {"Authorization": token },
+    headers: authToken,
     data: {
     "article": {
       "title": "VolVas",

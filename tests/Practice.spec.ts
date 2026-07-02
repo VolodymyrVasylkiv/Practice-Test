@@ -66,8 +66,8 @@ test("Practice", async ({ }) => {
     const user1: User1 = { name2: 'VV', age2: 1 }
     console.log(`The first name is ${user1.name2} and age is ${user1.age2}`);
 
-    const name1 = (name: string, age: number) => { 
-        console.log(`My name is ${name} and my age is ${age}`)
+    function name1 (name: string, age: number) { 
+       return console.log(`My name is ${name} and my age is ${age}`)
     }
     name1('dd', 56)
 
