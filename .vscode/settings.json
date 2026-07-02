@@ -60,13 +60,13 @@
       
 
       // ===== VARIABLES =====
-      "variable": "#449df1",
+      "variable": "#50a7f9df",
       "parameter": "#9ec8ff",
       "property": "#9ec8ff",
 
       // ===== FUNCTIONS =====
-      "function": "#f3f3acf2",
-      "method": "#f3f3ace2",
+      "function": "#f3f3acd7",
+      "method": "#f3f3acd7",
 
       // ===== KEYWORDS =====
       "keyword": "#4fa9f3",
